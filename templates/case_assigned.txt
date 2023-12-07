@@ -1,0 +1,7 @@
+Hi {{user}},
+
+Your case has been registered.
+And case manager assigned to you is : {{case_manager}}
+Your case id is : {{case_id}}
+
+thank you
