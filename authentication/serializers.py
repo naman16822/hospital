@@ -34,7 +34,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             'username', 'password', 'password2', 'email', 'first_name', 'last_name',
-            'roles', 'address', 'city', 'country',
+            'roles', 'address', 'city', 'country', 'origin', 
         ]
         extra_kwargs = {
             'first_name': {'required': True},
@@ -56,8 +56,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
             address=validated_data.get('address'),
-            city=validated_data('city'),
-            country=validated_data('country'),
+            city=validated_data.get('city'),
+            country=validated_data.get('country'),
+            origin=validated_data.get('origin')
         )
         
         user.set_password(validated_data['password'])

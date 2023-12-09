@@ -29,6 +29,7 @@ class CaseViewSet(ViewSet):
         request_data = {
             'category': request.data.get('category'),
             'documents': request.data.get('documents'),
+            'type': request.data.get('type'),
             'created_by': request.user.id,
         }
         
